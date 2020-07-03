@@ -1,7 +1,12 @@
+@TestFeature
 Feature: First Test in cucumber
-
-  Scenario: First test
-   // open site http://the-internet.herokuapp.com/add_remove_elements/
-    // click add button
-    // verify button appeared
-
+@TestScenario1
+  Scenario: First Test
+    Given open site HeroKuapp
+    When I click Add button
+    Then button Delete added
+  @TestScenario2
+  Scenario: Second Test
+    Given open site Book
+    When I click Chapter two button
+    Then can see Button with name
