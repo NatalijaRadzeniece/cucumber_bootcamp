@@ -15,21 +15,33 @@ public class FirstSteps {
         this.driver = Hooks.driver;
     }
 
-    @Given("I open site")
+    @Given("open site HeroKuapp")
     public void open_site(){
         driver.get("http://the-internet.herokuapp.com/add_remove_elements/");
-    }
+        }
 
-    @When("I click Add Element")
-    public void add_button(){
+    @When("I click Add button")
+    public void click_button(){
         driver.findElement(By.cssSelector("[onclick='addElement()']")).click();
     }
 
-    @Then("extra button Delete added")
-    public void confirm_extra_button_appeared(){
-        Assertions.assertTrue(driver.findElement(By.cssSelector("[class='added-manually']")).isDisplayed(), "Button not appeared");
+    @Then("button Delete added")
+    public void verify_button_added(){
+        Assertions.assertTrue(driver.findElement(By.cssSelector("[onclick='deleteElement()']")).isDisplayed(),"Button 'Delete' not added");
     }
 
+    @Given("open website")
+    public void open_another_site(){
+        driver.get("http://book.theautomatedtester.co.uk/");
+    }
 
+    @When("I click Chapter Two")
+    public void click_chapter_two(){
+    driver.findElement(By.xpath("//a[@href='/chapter2']")).click();
+    }
 
+    @Then("button Button with name appears")
+    public void button_with_name_added(){
+        Assertions.assertTrue(driver.findElement(By.xpath("//input[@value='Button with name']")).isDisplayed(), "Button with name did not appear");
+    }
 }

@@ -11,7 +11,7 @@ public class Steps {
         this.driver = Hooks.driver;
     }
 
-    @Given("open website")
+    @Given("open first website")
     public void open_website() {
         driver.get("https://www.google.com/");
         System.out.println(driver.getCurrentUrl());
