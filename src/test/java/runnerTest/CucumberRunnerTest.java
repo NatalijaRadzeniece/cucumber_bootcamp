@@ -1,7 +1,6 @@
 package runnerTest;
 
 
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -14,7 +13,7 @@ import org.junit.runner.RunWith;
         features = "src\\test\\resources",
         // glue word = provides path to steps definitions class
         glue = "stepDefinitions"
-//        ,tags = "@test"
+        , tags = "@MapExample"
 )
 public class CucumberRunnerTest {
 }

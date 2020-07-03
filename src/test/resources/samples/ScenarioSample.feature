@@ -12,3 +12,5 @@ Feature: Sample
      #Then -Then holds the expected result for the test to be executed.
     Then this is the result
     And this is also the result
+
+    #this is the step definitioon

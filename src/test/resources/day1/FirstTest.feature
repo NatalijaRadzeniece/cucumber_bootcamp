@@ -1,7 +1,18 @@
+@TestFeature
 Feature: First Test in cucumber
 
+  @TestScenario1
   Scenario: First test
-   // open site http://the-internet.herokuapp.com/add_remove_elements/
-    // click add button
-    // verify button appeared
+    Given open site HeroKuapp
+    When I click Add button
+    Then button Delete added
 
+  @TestScenario2
+  Scenario: Verify button on page
+    Given open web page TheAutomatedTester
+    When I click on Chapter two
+    Then button With Name is visible
+
+    #  http://book.theautomatedtester.co.uk/
+#  click on "Chapter two"
+#  will be able to see "Button With Name"
