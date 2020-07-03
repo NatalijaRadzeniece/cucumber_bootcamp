@@ -7,7 +7,9 @@ import stepDefinitions.hooks.Hooks;
 public class Steps {
 
     WebDriver driver;
+
     public Steps() {
+
         this.driver = Hooks.driver;
     }
 
