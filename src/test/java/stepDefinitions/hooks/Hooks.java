@@ -13,8 +13,7 @@ public class Hooks {
 
     @Before
     public void openBrowser() {
-        String userdirLib =  System.getProperty("user.dir") + "\\lib\\";
-        System.setProperty("webdriver.chrome.driver", userdirLib + "chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "/Users/Igor/IdeaProjects/selenium_bootcamp/lib/chromedriver");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
     }
