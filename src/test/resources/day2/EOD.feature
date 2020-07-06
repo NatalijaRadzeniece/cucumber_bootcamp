@@ -1,3 +1,13 @@
+Feature: Sign in then populate forms and sign out
+  Background:
+    Given I am on EOD page
+
+  Scenario: Clicking buttons
+    When I click sign in
+    And I click sign up
+    And I add email 'tani.soboleva@piu.lv' and password 'AlmondMilk123'
+    And I press sign up
+    Then I sign out
 
 #  open http://a.testaddressbook.com/
 #  click sing in

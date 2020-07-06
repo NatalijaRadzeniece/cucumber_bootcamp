@@ -19,10 +19,18 @@ public class OutputSteps {
         this.driver = Hooks.driver;
     }
 
+//    @Given("Open 'Enter number' page")
+//    public void open_page() {
+//        // Write code here that turns the phrase above into concrete actions
+//        driver.get("https://kristinek.github.io/site/tasks/enter_a_number");
+////        driver.get("https://www.seleniumeasy.com/test/ajax-form-submit-demo.html");
+//    }
+
     @Given("Open 'Enter number' page")
-    public void open_page(){
+    public void open_page() {
         driver.get("https://kristinek.github.io/site/tasks/enter_a_number");
     }
+
     @When("I send {string}")
     public void send_number(String number){
         driver.findElement(By.xpath("//input[@type='text']")).sendKeys(number);
