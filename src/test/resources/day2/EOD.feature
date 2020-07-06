@@ -2,7 +2,7 @@
 #  open http://a.testaddressbook.com/
 #  click sing in
 #  click sing up
-#  populate it and remember this
+#  populate it and remember this (as in collectDATA)
 #  sing out
 
 #  open http://a.testaddressbook.com/
@@ -15,10 +15,11 @@
 #  verify address added
 #  click List
 #  verify address on page
-#       REPEAT 3 TINES
+#       REPEAT 3 TINES (as in Create Scenario outline and use MAPS)
 
 
 #  open site
 #  sing in
 #  destroy one address
 #  verify address removed from page
+
