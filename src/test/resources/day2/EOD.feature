@@ -1,9 +1,9 @@
-
+Feature: EOD
 #  open http://a.testaddressbook.com/
-#  click sing in
-#  click sing up
+#  click sign in
+#  click sign up
 #  populate it and remember this
-#  sing out
+#  sign out
 
 #  open http://a.testaddressbook.com/
 #  click sing in
@@ -15,10 +15,17 @@
 #  verify address added
 #  click List
 #  verify address on page
-#       REPEAT 3 TINES
-
+#       REPEAT 3 TIMES
 
 #  open site
 #  sing in
 #  destroy one address
 #  verify address removed from page
+
+  Scenario: Add user and sign out
+    Given I am on Homepage page
+    When I click on 'Login' button
+    And I click 'Sign up'
+#   And I add email '1234@test.lv' and password 'test123' and remember
+#    Then click 'Sign out'
+#
