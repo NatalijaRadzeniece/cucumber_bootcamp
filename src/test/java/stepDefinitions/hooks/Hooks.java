@@ -20,7 +20,8 @@ public class Hooks {
     }
 
     @After
-    public void closeBrowser() {
+    public void closeBrowser()
+    {
         driver.quit();
     }
 }
