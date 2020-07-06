@@ -6,7 +6,7 @@ import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.net.MalformedURLException;
+import java.util.concurrent.TimeUnit;
 
 public class Hooks {
     public static WebDriver driver;
@@ -17,6 +17,7 @@ public class Hooks {
         System.setProperty("webdriver.chrome.driver", userdirLib + "chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     @After

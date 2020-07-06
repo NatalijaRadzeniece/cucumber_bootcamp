@@ -15,7 +15,7 @@
 #  verify address added
 #  click List
 #  verify address on page
-#       REPEAT 3 TINES
+#       REPEAT 3 TIMES
 
 
 #  open site
