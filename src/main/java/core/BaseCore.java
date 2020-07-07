@@ -13,10 +13,14 @@ public class BaseCore {
     public BaseCore(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
-        wait = new WebDriverWait(driver,  10);
+        wait = new WebDriverWait(driver,  15);
     }
 
     public void waitTextToBeInElement(WebElement element, String text){
         wait.until(ExpectedConditions.textToBePresentInElement(element,text));
+    }
+
+    public void waitElementAppeared(WebElement element){
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
 }

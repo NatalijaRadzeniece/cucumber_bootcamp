@@ -27,6 +27,7 @@ public class NumberStepDef {
 
     @When("I send {string}")
     public void send_number(String number) {
+
         driver.findElement(By.xpath("//input[@type='text']")).sendKeys(number);
     }
 
