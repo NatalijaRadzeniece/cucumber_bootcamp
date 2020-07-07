@@ -15,17 +15,27 @@ public class SignUpPage extends BaseCore {
     private WebElement signInBtn;
 
     @FindBy(how = How.NAME, using = "session[email]")
-    private WebElement userName;
+    private WebElement emailLogin;
 
     @FindBy(how = How.NAME, using = "session[password]")
-    private WebElement passWord;
+    private WebElement passWordLogin;
 
     @FindBy(how = How.NAME, using = "commit")
-    private WebElement saveNewUserButton;
+    private WebElement signInUserBtn;
 
     public void clickLoginBtn(){
         signInBtn.click();
     }
 
+    public void enterEmail(String email){
+        emailLogin.sendKeys(email);
+    }
+    public void enterPassword(String passw){
+        passWordLogin.sendKeys(passw);
+    }
+
+    public  void clickSignInUserBtn(){
+        signInUserBtn.click();
+    }
 
 }

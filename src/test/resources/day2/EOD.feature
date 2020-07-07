@@ -1,31 +1,34 @@
 Feature: EOD
-#  open http://a.testaddressbook.com/
-#  click sign in
-#  click sign up
-#  populate it and remember this
-#  sign out
 
-#  open http://a.testaddressbook.com/
-#  click sing in
-#  add data from previous test
-#  click 'Addresses'
-#click new Address
-#  populate form
-#  click Create Address
-#  verify address added
-#  click List
-#  verify address on page
-#       REPEAT 3 TIMES
+  Background:
+    Given I am on Homepage page
+    When I click on 'Login' button
 
+  Scenario: Add new user and sign out
+    And I click 'Sign up'
+    And I add email '5cencz@test.lv' and password '121ncez5' and remember
+    And I click Sign up button
+    Then click 'Sign out'
+
+  Scenario Outline: Sign in with previous data, create and verify address 3x
+    And i add data from previous test
+    And i click Login in
+    And click 'Addresses'
+    And click new Address
+    And fill '<name>', '<surname>', '<address1>', '<city>', '<zipcode>'
+    And click Create Address
+    And verify if "Address was successfully created."
+    And click List
+    And verify address on page
+    Examples:
+      | name  | surname   | address1  | city  | zipcode |
+      | Davis | Kronbergs | Maskavas  | Riga  | 2445    |
+      | Olga  | Cool      | Rigas 23  | Valka | 2224    |
+      | Sasha | Basha     | Centrs 22 | Ogre  | 1156    |
+
+#Scenario:
 #  open site
 #  sing in
 #  destroy one address
 #  verify address removed from page
 
-  Scenario: Add user and sign out
-    Given I am on Homepage page
-    When I click on 'Login' button
-    And I click 'Sign up'
-#   And I add email '1234@test.lv' and password 'test123' and remember
-#    Then click 'Sign out'
-#
