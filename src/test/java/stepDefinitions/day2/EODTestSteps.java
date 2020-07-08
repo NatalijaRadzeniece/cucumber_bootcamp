@@ -4,15 +4,15 @@ import core.EODHeader;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pageObjects.NewAddresPage;
 import pageObjects.SignUp;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
-import org.openqa.selenium.WebDriver;
 import pageObjects.SignUpPage;
 import stepDefinitions.hooks.Hooks;
 
@@ -25,6 +25,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EODTestSteps {
 
+    private Alert alert;
     private WebDriver driver;
     private SignUpPage signuppage;
     private EODHeader eodheader;
@@ -44,8 +45,8 @@ public class EODTestSteps {
         driver.get("http://a.testaddressbook.com/");
     }
 
-    @When("I click on 'Login' button")
-    public void click_sign_in() throws InterruptedException {
+    @When("I click 'Sign in' button")
+    public void click_sign_in() {
         signuppage = new SignUpPage(driver);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         signuppage.clickLoginBtn();
@@ -58,8 +59,9 @@ public class EODTestSteps {
         signup.clickSignBtn();
     }
 
-    @And("I add email {string} and password {string} and remember")
+    @And("I add email {string} and password {string}")
     public void add_email_and_pw(String email, String passw) {
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         signup.setEmail(email);
         signup.setPassWord1(passw);
         emailUser = email;
@@ -68,14 +70,14 @@ public class EODTestSteps {
         System.out.println("For Sign up used Email: " + email + " and password: " + passw);
     }
 
-    @And("I click Sign up button")
-    public void userSignUP() {
+    @And("I click 'Sign up' button")
+    public void user_SignUP() {
         signup = new SignUp(driver);
         signup.clickUserSignUpbtn();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
     }
 
-    @Then("click 'Sign out'")
+    @Then("Click 'Sign out'")
     public void click_sign_out() {
         eodheader = new EODHeader(driver);
         eodheader.clickSignOutBtn();
@@ -83,7 +85,7 @@ public class EODTestSteps {
     }
 
     //2nd scenario
-    @And("i add data from previous test")
+    @And("i add user details from previous test")
     public void add_previus_user_data() {
         signuppage.enterEmail(emailUser);
         signuppage.enterPassword(userPassword);
@@ -91,7 +93,7 @@ public class EODTestSteps {
         System.out.println("For Login used Email: " + emailUser + " and password: " + userPassword);
     }
 
-    @And("i click Login in")
+    @And("i click 'Login' button")
     public void click_Log_in() {
         signuppage.clickSignInUserBtn();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -104,7 +106,7 @@ public class EODTestSteps {
         driver.manage().timeouts().implicitlyWait(25, TimeUnit.SECONDS);
     }
 
-    @And("click new Address")
+    @And("click 'New Address'")
     public void click_new_address() {
         eodheader.clickCreateNewAddressBtn();
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -117,12 +119,15 @@ public class EODTestSteps {
         driver.findElement(By.name("address[address1]")).sendKeys(address1);
         driver.findElement(By.id("address_city")).sendKeys(city);
         driver.findElement(By.name("address[zip_code]")).sendKeys(zipcode);
-
-        //driver.findElement(By.name("file")).sendKeys(file);
+        newaddrespage = new NewAddresPage(driver);
+        newaddrespage.clickRadioBtn();
+        newaddrespage.sendFile();
+//        JavascriptExecutor jse=(JavascriptExecutor)driver;
+//        jse.executeScript("document.getElement('address_color').value='#FFDE17'");
 
     }
 
-    @And("click Create Address")
+    @And("click 'Create Address'")
     public void click_Crate_address() {
         newaddrespage = new NewAddresPage(driver);
         driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
@@ -138,19 +143,57 @@ public class EODTestSteps {
 
     }
 
-    @And("click List")
+    @And("click 'List'")
     public void click_list_btn() {
         driver.findElement(By.cssSelector("[data-test=list]")).click();
+        wait = new WebDriverWait(driver, 15);
     }
 
-    @And("verify address on page")
+    @Then("verify address on page")
     public void verify_adresses() {
-//        List<WebElement> table = driver.findElement(By.cssSelector("[class=table]"));
 //        assertEquals(table.getRowCount(), 3);
-//        List<WebElement> info = driver.findElements(By.xpath("//td[contains(text(),'Davis')]"));
-//        Assertions.assertEquals("Dāvis, info());
-//
+        List<WebElement> rowCount = driver.findElements(By.xpath("//table[@class='table']/tbody/tr"));
+        System.out.println("Created: " + rowCount.size() + " new addresses");
+//        Assertions.assertEquals(3, rowCount.size(),"Row size is not 3" );
+    }
+
+
+    //3rd scenario
+    @And("again add user data to log in")
+    public void click_login_btn() throws InterruptedException, AWTException {
+        signuppage.enterEmail(emailUser);
+        signuppage.enterPassword(userPassword);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    }
+
+    @And("i click 'Login' again")
+    public void click_Log_in_again() {
+        signuppage.clickSignInUserBtn();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    }
+
+    @And("i click 'Addresses' again")
+    public void click_address_again() {
+        eodheader = new EODHeader(driver);
+        eodheader.clickAddressBtn();
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+    }
+
+
+    @And("i destroy one address")
+    public void click_destroy_addres() {
+        newaddrespage = new NewAddresPage(driver);
+        newaddrespage.clickDestroyAddressReadyBtn();
+        alert = driver.switchTo().alert();
+        alert.accept();
 
     }
 
+    @Then("verify address removed from page")
+    public void verify_address_delited() {
+        List<WebElement> rowCountfinnaly = driver.findElements(By.xpath("//table[@class='table']/tbody/tr"));
+        Assertions.assertEquals(2, rowCountfinnaly.size(), "Adress not deleted! ");
+        System.out.println("Was 3 addresses, after delete: " + rowCountfinnaly.size() + "  addresses");
+
+    }
 }

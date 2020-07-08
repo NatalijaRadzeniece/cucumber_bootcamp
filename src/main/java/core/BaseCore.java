@@ -1,5 +1,6 @@
 package core;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -10,6 +11,7 @@ public class BaseCore {
 
     private WebDriver driver;
     private WebDriverWait wait;
+    private Alert alert;
     public BaseCore(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
@@ -18,5 +20,10 @@ public class BaseCore {
 
     public void waitTextTpBeInElement(WebElement element, String text){
         wait.until(ExpectedConditions.textToBePresentInElement(element, text));
+    }
+
+    public void acceptAlert() {
+        alert = driver.switchTo().alert();
+        alert.accept();
     }
 }
