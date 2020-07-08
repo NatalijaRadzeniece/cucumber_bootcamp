@@ -19,4 +19,8 @@ public class BaseCore {
     public void waitTextToBeInElement(WebElement element, String text){
         wait.until(ExpectedConditions.textToBePresentInElement(element, text));
     }
+
+    public void waitElementAppeared(WebElement element){
+        wait.until(ExpectedConditions.visibilityOf(element));
+    }
 }
