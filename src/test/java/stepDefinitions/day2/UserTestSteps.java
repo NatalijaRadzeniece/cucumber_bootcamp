@@ -1,6 +1,6 @@
 package stepDefinitions.day2;
 
-import core.Header;
+import core.HeaderFirst;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -18,10 +18,10 @@ public class UserTestSteps {
     private AddUserPage addUserPage;
     private static String nameUser;
     private static String password;
-    private Header header;
+    private HeaderFirst header;
 
     public UserTestSteps() {
-        driver = Hooks.driver;
+        this.driver = Hooks.driver;
     }
 
     @Given("Im on Add user Page")
@@ -55,7 +55,7 @@ public class UserTestSteps {
 
     @When("I click on 'Login'")
     public void loginLink() {
-        header = new Header(driver);
+        header = new HeaderFirst(driver);
         header.clickLogin();
     }
 

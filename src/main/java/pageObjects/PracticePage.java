@@ -6,12 +6,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class EODpage extends BaseFunc {
+public class PracticePage extends BaseFunc {
 
     @FindBy(how = How.CSS, using = "[id='sign-in']")
     private WebElement pressSignIn;
 
-    @FindBy(how = How.CSS, using = "[data-test='sign-up']")
+    @FindBy(how = How.XPATH, using = "//a[@data-test='sign-up']")
     private WebElement pressSignUp;
 
     @FindBy(how = How.CSS, using = "[id='user_email']")
@@ -20,14 +20,11 @@ public class EODpage extends BaseFunc {
     @FindBy(how = How.CSS, using = "[id='user_password']")
     private WebElement insertPassword;
 
-    @FindBy(how = How.CSS, using = "[class='btn btn-primary']")
+    @FindBy(how = How.XPATH, using = "//a[contains(text(),'Sign out')]")
     private WebElement applyEmailandPassword;
 
-    @FindBy(how = How.CSS, using = "[data-test='sign-out']")
-    private WebElement pressSignOut;
 
-
-    public EODpage(WebDriver driver) {
+    public PracticePage(WebDriver driver) {
         super(driver);
     }
 
@@ -49,10 +46,6 @@ public class EODpage extends BaseFunc {
 
     public void applyData() {
         applyEmailandPassword.click();
-    }
-
-    public void clickSignOut() {
-        pressSignOut.click();
     }
 
 

@@ -11,7 +11,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import stepDefinitions.hooks.Hooks;
 
-import javax.xml.namespace.QName;
 import java.util.Map;
 
 public class MapTestSteps {

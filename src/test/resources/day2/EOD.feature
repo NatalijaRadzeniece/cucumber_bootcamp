@@ -1,12 +1,15 @@
+#@Piu
 Feature: Sign in then populate forms and sign out
+
   Background:
-    Given I am on EOD page
+    Given I am on this page
 
   Scenario: Clicking buttons
     When I click sign in
     And I click sign up
-    And I add email 'tani.soboleva@piu.lv' and password 'AlmondMilk123'
+    And I add email 'karinastepanovaa@piu.lv' and password 'picllkeAvmf123'
     And I press sign up
+
     Then I sign out
 
 #  open http://a.testaddressbook.com/
@@ -15,17 +18,7 @@ Feature: Sign in then populate forms and sign out
 #  populate it and remember this
 #  sing out
 
-#  open http://a.testaddressbook.com/
-#  click sing in
-#  add data from previous test
-#  click 'Addresses'
-#click new Address
-#  populate form
-#  click Create Address
-#  verify address added
-#  click List
-#  verify address on page
-#       REPEAT 3 TINES
+
 
 
 #  open site

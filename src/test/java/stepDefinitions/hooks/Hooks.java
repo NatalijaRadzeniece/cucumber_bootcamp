@@ -6,8 +6,6 @@ import io.cucumber.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.net.MalformedURLException;
-
 public class Hooks {
     public static WebDriver driver;
 
