@@ -6,7 +6,7 @@ Feature: EOD final cucumber task
 
   Scenario: Add new user and sign out
     And I click 'Sign up'
-    And I add email 'teegeg@test.lv' and password 'ghtthh'
+    And I add email 'teegbeg@test.lv' and password 'ghtthh'
     And I click 'Sign up' button
     Then Click 'Sign out'
 

@@ -1,4 +1,29 @@
+Feature: extra
 #using Scenario Outline and data table create test:
+
+  Scenario Outline:
+    Given Go to Asos Homepage page
+    And select '<gender>'
+    And then select '<category>'
+    And  then '<item>'
+    And  then '<value1>'
+    And then '<value2>'
+    And then '<Brand>'
+    And  Select filters:
+  #in map:  Key        Value
+      |  |  |  |
+    Then i should see '<result>'
+    Examples:
+
+      | gender | category      | item          | value1    | value2 | Brand         | result                                                     |
+      | Woman  | Shoes         | Loafers       | Leather   | 36     | Vagabond      | 'Vagabond Layla leather flat loafers in black'             |
+      | Man    | 'Accessories' | 'Caps & Hats' | 'Beanies' | Tan    | 'Asos Design' | 'ASOS DESIGN co-ord oversized beanie in brown tobacco rib' |
+
+
+
+
+
+    #using Scenario Outline and data table create test:
 
 #Scenario 1:
 #navigate to Asos
