@@ -2,7 +2,7 @@ Feature: Test Address Book Site functionality check
 
   Background:
     Given User opens "http://a.testaddressbook.com/"
-      And User has email "testacc123456789@email.com" and password "Password1"
+      And User has email "testacc1234567890@email.com" and password "Password1"
 
   Scenario: Register user
     Given User opens Login page
@@ -58,7 +58,7 @@ Feature: Test Address Book Site functionality check
     Examples:
       | name  | surname | address          | city      | zipCode | birthday   | age | webSite             | phone        | note      | state   | country      | climbing | dancing | reading |
       | Alex  | Nilson  | Rembo Street 1a  | Tokyo     | JP-777  | 12/12/1900 | 120 | http://rembo.com    | 777-777-7701 | I'm Rembo | Iowa    | Canada       | No       | No      | No      |
-      | Yan   | Smite   | High Street 123  | New York  | TT-1234 | 10/10/2000   | 25  | http://yensmite.com | 777-777-7701 | none      | Alabama | United State | No       | No      | No      |
+      | Yan   | Smite   | High Street 123  | New York  | TT-1234 | 10/10/2000 | 25  | http://yensmite.com | 777-777-7701 | none      | Alabama | United State | No       | No      | No      |
       | Simon | Rolberg | Earth Street 222 | Amsterdam | ZP-1245 | 11/11/2008 | 12  | http://Simon2008.eu | 777-777-7701 | none      | Hawaii  | Canada       | No       | No      | No      |
 
 
