@@ -14,7 +14,7 @@ import org.junit.runner.RunWith;
         features = "sr/test/resources",
         // glue word = provides path to steps definitions class
         glue = "stepDefinitions"
-        ,tags = "@input"
+        ,tags = "@user"
 )
         // "@regression" - will run only tests with this tag
         // "@regression and @sanity" - run test which have tags as @regression and @sanity
