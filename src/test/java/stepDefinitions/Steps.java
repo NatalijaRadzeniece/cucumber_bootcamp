@@ -1,6 +1,7 @@
 package stepDefinitions;
 
 import io.cucumber.java.en.Given;
+import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import stepDefinitions.hooks.Hooks;
 
@@ -16,4 +17,5 @@ public class Steps {
         driver.get("https://www.google.com/");
         System.out.println(driver.getCurrentUrl());
     }
+
 }
