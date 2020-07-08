@@ -21,16 +21,16 @@ public class SignUpPage extends BaseCore {
         super(driver);
     }
 
-    public void setEmail(String eMail){
+    public void setEmail(String eMail) {
         waitElementAppeared(email);
         email.sendKeys(eMail);
     }
 
-    public void setPassword(String passWord){
+    public void setPassword(String passWord) {
         password.sendKeys(passWord);
     }
 
-    public void clickSignUp(){
+    public void clickSignUp() {
         signUp.click();
     }
 }

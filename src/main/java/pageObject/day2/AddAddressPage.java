@@ -7,8 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.ui.Select;
 
-import java.util.List;
-
 public class AddAddressPage extends BaseCore {
 
     @FindBy(how = How.NAME, using = "address[first_name]")

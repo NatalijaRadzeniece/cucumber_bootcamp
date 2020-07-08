@@ -23,8 +23,8 @@ Feature: Testing test address book webpage
     And I add zip code'<zip code>'
     And I click create Address
     And I see message 'Address was successfully created.'
-    Then I click on list
-#    Then I verify address is now on page
+    And I click on list
+    Then I verify address is now on page by first name '<first name>'
     Examples:
       | first name | last name | address1     | city      | state | zip code |
       | Darth      | Vader     | Star 1       | Tataouine | MT    | 2255     |

@@ -132,12 +132,16 @@ public class AddressTestSteps {
         Assertions.assertTrue(message.equals(specAddressPage.getVerifyMessage()), "Message not the same");
     }
 
-    @Then("I click on list")
+    @And("I click on list")
     public void click_list_button() {
         specAddressPage.clickListButton();
     }
 
-    //    @Then("I verify address is now on page")
+    @Then("I verify address is now on page by first name {string}")
+    public void verify_address_in_list(String firstName) {
+        Assertions.assertEquals(firstName, addressesPage.getAddressFirstName(), "Not the same first name");
+    }
+
     @When("I add email once more {string} and password {string} in sign in fields")
     public void add_user_data_for_destroy(String e_mail2, String pass2) {
         signInPage = new SignInPage(driver);

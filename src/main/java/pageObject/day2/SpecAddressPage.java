@@ -18,12 +18,12 @@ public class SpecAddressPage extends BaseCore {
         super(driver);
     }
 
-    public String getVerifyMessage(){
+    public String getVerifyMessage() {
         waitElementAppeared(verifyMessage);
         return verifyMessage.getText();
     }
 
-    public void clickListButton(){
+    public void clickListButton() {
         listButton.click();
     }
 }
