@@ -1,5 +1,6 @@
 package core;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -10,17 +11,29 @@ public class BaseCore {
 
     private WebDriver driver;
     private WebDriverWait wait;
+    private Alert alert;
+
     public BaseCore(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
-        wait = new WebDriverWait(driver,  15);
+        wait = new WebDriverWait(driver, 15);
     }
 
-    public void waitTextToBeInElement(WebElement element, String text){
-        wait.until(ExpectedConditions.textToBePresentInElement(element,text));
+    public void acceptAlert() {
+        alert = driver.switchTo().alert();
+        alert.accept();
     }
 
-    public void waitElementAppeared(WebElement element){
+    public void dismissAlert() {
+        alert = driver.switchTo().alert();
+        alert.dismiss();
+    }
+
+    public void waitTextToBeInElement(WebElement element, String text) {
+        wait.until(ExpectedConditions.textToBePresentInElement(element, text));
+    }
+
+    public void waitElementAppeared(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element));
     }
 }

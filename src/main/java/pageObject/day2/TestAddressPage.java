@@ -25,12 +25,12 @@ public class TestAddressPage extends BaseCore {
         signInButtonMainPage.click();
     }
 
-    public void clickSignOutButton(){
+    public void clickSignOutButton() {
         waitElementAppeared(logOutButton);
         logOutButton.click();
     }
 
-    public void clickAddressesButton(){
+    public void clickAddressesButton() {
         addressesButton.click();
     }
 }

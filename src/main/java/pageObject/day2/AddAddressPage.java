@@ -37,6 +37,7 @@ public class AddAddressPage extends BaseCore {
     }
 
     public void setFirstNameField(String firstName) {
+        waitElementAppeared(firstNameField);
         firstNameField.sendKeys(firstName);
     }
 

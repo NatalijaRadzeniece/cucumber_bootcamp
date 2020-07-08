@@ -8,37 +8,37 @@ import org.openqa.selenium.support.How;
 
 public class SignInPage extends BaseCore {
 
+    @FindBy(how = How.XPATH, using = "//input[@type='email']")
+    private WebElement email2;
+
+    @FindBy(how = How.XPATH, using = "//input[@type='password']")
+    private WebElement password2;
+
     @FindBy(how = How.XPATH, using = "//a[@data-test='sign-up']")
     private WebElement signUpButton;
 
-    @FindBy(how = How.ID, using = "user_email")
-    private WebElement email;
-
-    @FindBy(how = How.ID, using = "user_password")
-    private WebElement password;
-
-    @FindBy(how = How.NAME, using = "commit")
-    private WebElement commitButton;
+    @FindBy(how = How.XPATH, using = "//input[@value='Sign in']")
+    private WebElement signInButton;
 
     public SignInPage(WebDriver driver) {
         super(driver);
     }
 
-    public void clickSignUpButton(){
+    public void setEmail2(String eMailIn) {
+        waitElementAppeared(email2);
+        email2.sendKeys(eMailIn);
+    }
+
+    public void setPassword2(String passWordIn) {
+        password2.sendKeys(passWordIn);
+    }
+
+    public void clickSignUpButton() {
         waitElementAppeared(signUpButton);
         signUpButton.click();
     }
 
-    public void setEmail(String eMail){
-        waitElementAppeared(email);
-        email.sendKeys(eMail);
-    }
-
-    public void setPassword(String passWord){
-        password.sendKeys(passWord);
-    }
-
-    public void clickCommitButton(){
-        commitButton.click();
+    public void clickSignInButton() {
+        signInButton.click();
     }
 }
