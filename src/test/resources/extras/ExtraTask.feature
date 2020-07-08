@@ -1,3 +1,31 @@
+Feature: Asos Women and Man item selection
+
+  Background:
+    Given I navigate to Asos homepage
+
+  Scenario Outline: : Women item search for shoes
+    When I click on Women
+    And I click on Shoes
+    And I click on Loafer
+    And I add filter '<leather>'
+    And I add size filter '<size>'
+    And I add brand filter '<brand>'
+    Then I get 'Vagabond Layla leather flat loafers in black'
+    Examples:
+      | leather | size | brand |
+      |         |      |       |
+  Scenario Outline: : Men item search for shoes
+    When I click on Men
+    And I click on Accessories
+    And I click on Caps & Hats
+    And I add filter '<beanies>'
+    And I add color filter '<color>'
+    And I add brand filter '<brand>'
+    Then I get 'Vagabond Layla leather flat loafers in black'
+    Examples:
+      | beanies | color | brand |
+      |         |      |       |
+
 #using Scenario Outline and data table create test:
 
 #Scenario 1:
