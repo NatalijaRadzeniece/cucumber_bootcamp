@@ -16,7 +16,17 @@ public class BaseFunc {
         PageFactory.initElements(driver, this);
         wait = new WebDriverWait(driver, 10);
     }
+
     public void waitTextToBeInElement(WebElement element, String text){
         wait.until(ExpectedConditions.textToBePresentInElement(element, text));
+    }
+
+    public void typeNewText(WebElement elem, String text) {
+        elem.clear();
+        elem.sendKeys(text);
+    }
+
+    public WebDriver getDriver() {
+        return driver;
     }
 }
