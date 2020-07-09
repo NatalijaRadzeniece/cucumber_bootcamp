@@ -25,7 +25,6 @@ public class MapTestSteps {
 
     @Given("Im on Ajax Form page")
     public void on_ajax_page() {
-        driver.get("https://www.seleniumeasy.com/test/ajax-form-submit-demo.html");
     }
 
     @When("I add:")
