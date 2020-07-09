@@ -1,0 +1,145 @@
+package stepDefinitions;
+
+
+import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import org.openqa.selenium.WebDriver;
+import pageObject.HomePage;
+import pageObject.SignHomePage;
+import pageObject.SignInPage;
+import pageObject.SignUpPage;
+import stepDefinitions.hooks.Hooks;
+
+public class EOD_TaskSteps {
+
+
+    private WebDriver driver;
+
+    public EOD_TaskSteps() {
+        driver = Hooks.driver;
+    }
+
+    private String Email;
+    private String Password;
+
+    @Given("I am in HomePage")
+    public void i_am_in_HomePage() {
+        driver.get("http://a.testaddressbook.com/");
+    }
+
+    @When("I click Sign in")
+    public void i_click_Sign_in() {
+        HomePage HomePage = new HomePage(driver);
+        HomePage.clickSignIn();
+
+
+    }
+
+    @And("I click Sign up")
+    public void i_click_Sign_up() {
+        SignInPage SignInPage = new SignInPage(driver);
+        SignInPage.clickSignInButton();
+    }
+
+    @And("I write Email {string} and Password {string}")
+    public void i_write_Email_ginger_inbox_lv_and_Password_test123(String mail, String PAssword) {
+        SignUpPage SignUpPage = new SignUpPage(driver);
+        SignUpPage.setEmail(mail);
+        SignUpPage.setPassword(PAssword);
+
+
+    }
+
+    @And("I click Sign up again")
+    public void i_click_Sign_up_again() {
+        SignUpPage SignUpPage = new SignUpPage(driver);
+        SignUpPage.clickSignUp();
+    }
+
+    @Then("I click Sing out")
+    public void i_click_Sing_out() {
+        SignHomePage SignHomePage = new SignHomePage(driver);
+        SignHomePage.clickSignOut();
+    }
+
+    @When("I add Username and Password to credintials")
+    public void i_add_Username_and_Password_to_credintials() {
+        SignInPage SignInPage = new SignInPage(driver);
+
+    }
+
+    @And("I click Sign in again")
+    public void i_click_Sign_in_again() {
+        SignInPage SignInPage = new SignInPage(driver);
+        SignInPage.SignIn(Email, Password);
+        SignInPage.clickSignInButton();
+    }
+
+    @And("I click Addreses")
+    public void i_click_Addreses() {
+
+    }
+
+    @And("I click New Address")
+    public void i_click_New_Address() {
+
+    }
+
+    @And("I add {string}, {string}, {string}, {string}, {string}")
+    public void i_add(String string, String string2, String string3, String string4, String string5) {
+
+    }
+
+    @And("I click Creat Address")
+    public void i_click_Creat_Address() {
+
+    }
+
+    @And("I chech if address successfully created")
+    public void i_chech_if_address_successfully_created() {
+
+    }
+
+    @And("I click List")
+    public void i_click_List() {
+
+    }
+
+    @Then("I check if addresses match by {string}")
+    public void i_check_if_addresses_match_by(String string) {
+
+    }
+
+    @And("I Sign out")
+    public void i_Sign_out() {
+
+    }
+
+    @When("I write Email ginger@inbox.lv and Password test123 again")
+    public void i_write_Email_ginger_inbox_lv_and_Password_test123_again() {
+
+    }
+
+    @And("I click Sign in againagain")
+    public void i_click_Sign_in_againagain() {
+
+    }
+
+    @And("I click Addresses again")
+    public void i_click_Addresses_again() {
+
+    }
+
+    @And("I destroy first address")
+    public void i_destroy_first_address() {
+        System.out.println("destroy");
+    }
+
+    @Then("success message appears")
+    public void success_message_appears() {
+        System.out.println("Successs");
+    }
+
+}
