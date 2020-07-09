@@ -15,7 +15,7 @@ public class AddressTestSteps {
 
     private WebDriver driver;
     private AddressHomePage addressHomePage;
-    private static String emailUser;
+    private static String email;
     private static String password;
     private AddressHomePage goToSignUp;
 
@@ -36,13 +36,6 @@ public class AddressTestSteps {
         addressHomePage = new AddressHomePage(driver);
         addressHomePage.setSignIn();
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-    }
-
-    @And("I click sign up")
-    public void i_Click_Sign_Up() {
-        addressHomePage = new AddressHomePage(driver);
-        addressHomePage.setSignUp();
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 
     }
 
@@ -51,20 +44,23 @@ public class AddressTestSteps {
         addressHomePage = new AddressHomePage(driver);
         addressHomePage.setEmail(mail);
         addressHomePage.setPassword(pass);
-        emailUser = mail;
+        email = mail;
         password = pass;
+
 
     }
 
-    @And("Click sign up")
-    public void clickSignUp() throws InterruptedException {
-        addressHomePage.setSignUpTwo();
-        Thread.sleep(3000);
+    @And("Click sign in")
+    public void clickSignIn() {
+        addressHomePage = new AddressHomePage(driver);
+        addressHomePage.setSignInEnter();
+
     }
 
 
     @Then("Click sign out")
     public void clickSignOut() {
+        addressHomePage = new AddressHomePage(driver);
         addressHomePage.setsignOut();
 
     }

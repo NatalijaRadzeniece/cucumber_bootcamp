@@ -47,6 +47,7 @@ public class CreatePage extends BaseCore {
     private WebElement list;
 
 
+
     public void clickSignIn() {
         signIn.click();
     }
@@ -72,24 +73,23 @@ public class CreatePage extends BaseCore {
     }
 
 
-         public void setFirstName(String String firstNamen) {
+         public void setFirstName(String firstNamen) {
               firstName.sendKeys();
     }
 
-          public void setLastName(String String lastNamen) {
+          public void setLastName(String lastNamen) {
               lastName.sendKeys();
           }
 
-        public void setStreet(String String address1) {
+        public void setStreet(String address1) {
                 street.sendKeys();
     }
 
-        public void setCity(String String city) {
+        public void setCity(String city) {
             this.city.sendKeys();
         }
 
-        public void setzipCode(String String zip) {
-            zipCode.sendKeys();
+        public void setzipCode(String zip) { zipCode.sendKeys();
         }
 
 

@@ -11,17 +11,17 @@ public class AddressHomePage extends BaseCore {
     @FindBy(how = How.XPATH, using = "//a[@id='sign-in']")
     private WebElement signIn;
 
-    @FindBy(how = How.XPATH, using = "//a[contains(text(),'Sign up')]")
-    private WebElement signUp;
-
-    @FindBy(how = How.XPATH, using = "//input[@id='user_email']")
+    @FindBy(how = How.XPATH, using = "//*[@id='session_email']")
     private WebElement email;
 
-    @FindBy(how = How.XPATH, using = "//input[@id='user_password']")
+    @FindBy(how = How.XPATH, using = "//*[@id='session_password']")
     private WebElement password;
 
+//    @FindBy(how = How.XPATH, using = "/html/body/div/div/div/div/form/div[4]/a")
+//    private WebElement signUp;
+
     @FindBy(how = How.XPATH, using = "//input[@name='commit']")
-    private WebElement signUpTwo;
+    private WebElement signInEnter;
 
     @FindBy(how = How.XPATH, using = "//a[contains(text(),'Sign out')]")
     private WebElement signOut;
@@ -35,9 +35,9 @@ public class AddressHomePage extends BaseCore {
         signIn.click();
 
     }
-    public void setSignUp() {
-        signUp.click();
-    }
+//    public void setSignUp() {
+//        signUp.click();
+//    }
 
     public void setEmail(String mail) {
         email.sendKeys(mail);
@@ -47,10 +47,10 @@ public class AddressHomePage extends BaseCore {
         password.sendKeys(pass);
     }
 
-
-    public void setSignUpTwo() {
-        signUpTwo.click();
+    public void setSignInEnter(){
+        signInEnter.click();
     }
+
 
     public void setsignOut() {
         signOut.click();

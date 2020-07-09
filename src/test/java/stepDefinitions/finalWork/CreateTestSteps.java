@@ -14,11 +14,11 @@ public class CreateTestSteps {
 
     private WebDriver driver;
     private CreatePage createPage;
-    private static String firstNamenn;
-    private static String lastNamenn;
-    private static String addresss1;
+    private static String firstName;
+    private static String lastName;
+    private static String address;
     private static String city;
-    private static String zip;
+    private static String zipcode;
 
     public CreateTestSteps() {
         this.driver = Hooks.driver;
@@ -55,7 +55,7 @@ public class CreateTestSteps {
         createPage = new CreatePage(driver);
         createPage.setFirstName(firstNamen);
         createPage.setLastName(lastNamen);
-        createPage.setStreet(address1);
+        createPage.setStreet(address);
         createPage.setCity(city);
         createPage.setzipCode(zip);
         firstNamenn = firstNamen;
