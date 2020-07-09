@@ -11,10 +11,10 @@ import org.junit.runner.RunWith;
 // CucumberOptions - provides important information.
 @CucumberOptions(
         // feature word - provides location of feature file
-        features = "src/test/resources",
+        features = "src\\test\\resources",
         // glue word = provides path to steps definitions class
-        glue = "stepDefinitions"
-        ,tags = "@Ajax"
+        glue = "stepDefinitions",
+        tags = "@Test"
 
         // "@regression" - will run only tests with this tag
 // "@regression and @sanity" - run test which have tags as @regression and @sanity
