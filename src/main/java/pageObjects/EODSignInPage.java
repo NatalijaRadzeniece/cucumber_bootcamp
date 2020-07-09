@@ -26,7 +26,6 @@ public class EODSignInPage extends BaseCore {
     @FindBy(how = How.XPATH, using = "//*[@id='clearance']/div/div/form/div[3]/input")
     private WebElement signInButton;
 
-
     public void clickSignUp(){
         waitForElementAppeared(signUpButton);
         signUpButton.click();

@@ -55,5 +55,4 @@ public class EODAddressShowPage extends BaseCore {
         listLink.click();
     }
 
-
 }

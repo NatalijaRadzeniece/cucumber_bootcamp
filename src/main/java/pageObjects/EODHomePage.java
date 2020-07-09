@@ -19,5 +19,4 @@ public class EODHomePage extends BaseCore {
         waitForElementAppeared(signInButton);
         signInButton.click();
     }
-
 }

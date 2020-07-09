@@ -17,7 +17,6 @@ import org.junit.runner.RunWith;
         // "@regression and @sanity" - run test which have tags as @regression and @sanity
         // "@regression and not @sanity" - run test which have tags as @regression and NOT @sanity
         // "@regression or @sanity"  - run test or @regression or @sanity
-
 )
 public class CucumberRunnerTest {
 }

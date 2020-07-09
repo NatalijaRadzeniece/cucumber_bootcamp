@@ -8,8 +8,6 @@ import org.openqa.selenium.support.How;
 
 public class EODSignUpPage extends BaseCore {
 
-//    private String password;
-
     public EODSignUpPage(WebDriver driver) {
         super(driver);
     }
@@ -30,10 +28,10 @@ public class EODSignUpPage extends BaseCore {
 
     public void setPassword(String password){
         passwordField.sendKeys(password);
-//        this.password = password;
     }
 
     public void clickSignUp(){
         signUpButton.click();
     }
+
 }

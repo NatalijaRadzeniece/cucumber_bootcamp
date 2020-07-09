@@ -26,15 +26,6 @@ public class EODAddressesPage extends BaseCore {
     @FindBy(how = How.XPATH, using = "/html/body/div/table/tbody/tr/td[7]/a")
     private WebElement destroyButton;
 
-//    @FindBy(how = How.XPATH, using = "/html/body/div/table/tbody/tr/td[1]")
-//    private WebElement firstName;
-//
-//    @FindBy(how = How.XPATH, using = "/html/body/div/table/tbody/tr/td[2]")
-//    private WebElement lastName;
-//
-//    @FindBy(how = How.XPATH, using = "/html/body/div/table/tbody/tr/td[3]")
-//    private WebElement city;
-
     public void clickNewAddressLink(){
         waitForElementAppeared(newAddressLink);
         newAddressLink.click();
@@ -45,19 +36,6 @@ public class EODAddressesPage extends BaseCore {
         destroyButton.click();
         acceptAlert();
     }
-
-//    public String getFirstName(){
-//        waitForElementAppeared(firstName);
-//        return firstName.getText();
-//    }
-//
-//    public String getLastName(){
-//        return lastName.getText();
-//    }
-//
-//    public String getCity(){
-//        return city.getText();
-//    }
 
 
 }

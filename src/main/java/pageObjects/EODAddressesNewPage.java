@@ -43,5 +43,4 @@ public class EODAddressesNewPage extends BaseCore {
         createAddressButton.click();
     }
 
-
 }

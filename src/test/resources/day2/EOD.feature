@@ -50,7 +50,6 @@ Feature: 6-07-20 Home work
   And I destroy one address
   Then I verify address removed
 
-
 #  open site
 #  sing in
 #  destroy one address
