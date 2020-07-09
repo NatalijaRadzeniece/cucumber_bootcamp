@@ -89,7 +89,8 @@ public class EOD_TaskSteps {
 
     @And("I add {string}, {string}, {string}, {string}, {string}")
     public void i_add(String string, String string2, String string3, String string4, String string5) {
-
+        AddressWriteInPage AddressWriteInPage = new AddressWriteInPage(driver);
+        AddressWriteInPage.Data(string, string2, string3, string4, string5);
     }
 
     @And("I click Creat Address")
