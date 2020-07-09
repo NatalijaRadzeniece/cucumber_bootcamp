@@ -3,17 +3,23 @@ Feature: Asos Women and Man item selection
   Background:
     Given I navigate to Asos homepage
 
+#    in limited time could not locate how to use Asos page filters (they are not select)
+#  it would be easy to complite task as not a scenario outline, but simple scenario
+#  using only clicks, but i assume that is not the task
+
   Scenario Outline: : Women item search for shoes
     When I click on Women
-    And I click on Shoes
+    And I navigate to Shoes
     And I click on Loafer
-    And I add filter '<leather>'
+#    And I add leather filter'<leather>'
+    And I select leather filter
     And I add size filter '<size>'
     And I add brand filter '<brand>'
     Then I get 'Vagabond Layla leather flat loafers in black'
     Examples:
-      | leather | size | brand |
-      |         |      |       |
+      | leather | size | brand    |
+      | Leather | 36   | Vagabond |
+
   Scenario Outline: : Men item search for shoes
     When I click on Men
     And I click on Accessories
@@ -23,8 +29,8 @@ Feature: Asos Women and Man item selection
     And I add brand filter '<brand>'
     Then I get 'Vagabond Layla leather flat loafers in black'
     Examples:
-      | beanies | color | brand |
-      |         |      |       |
+      | beanies | color | brand    |
+      | Leather | 36    | Vagabond |
 
 #using Scenario Outline and data table create test:
 

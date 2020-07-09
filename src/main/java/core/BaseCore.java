@@ -9,7 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseCore {
 
-    private WebDriver driver;
+    public WebDriver driver;
     private WebDriverWait wait;
     private Alert alert;
 
