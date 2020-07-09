@@ -27,6 +27,9 @@ public class AddressWriteInPage extends BaseFunc {
     @FindBy(how = How.NAME, using = "address[zip_code]")
     private WebElement ZiperCode;
 
+    @FindBy(how = How.NAME, using = "commit")
+    private WebElement createAddress;
+
 
 
     public void Data(String FirstName, String LastName, String address, String City, String ZipCode){
@@ -35,6 +38,9 @@ public class AddressWriteInPage extends BaseFunc {
         address1.sendKeys(address);
         city.sendKeys(City);
         ZiperCode.sendKeys(ZipCode);
+    }
+    public void CreatAddr(){
+        createAddress.click();
     }
 
 }

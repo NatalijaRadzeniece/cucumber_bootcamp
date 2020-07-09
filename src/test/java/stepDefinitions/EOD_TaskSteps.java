@@ -5,6 +5,7 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import pageObject.*;
 import stepDefinitions.hooks.Hooks;
@@ -95,17 +96,20 @@ public class EOD_TaskSteps {
 
     @And("I click Creat Address")
     public void i_click_Creat_Address() {
-
+        AddressWriteInPage AddressWriteInPage = new AddressWriteInPage(driver);
+        AddressWriteInPage.CreatAddr();
     }
 
     @And("I chech if address successfully created")
     public void i_chech_if_address_successfully_created() {
-
+        ForCheck ForCheck = new ForCheck(driver);
+        Assertions.assertEquals("Address was successfully created.", ForCheck.getVerifyMessage(), "Smth went wrong");
     }
 
     @And("I click List")
     public void i_click_List() {
-
+        ForCheck ForCheck = new ForCheck(driver);
+        ForCheck.clickList();
     }
 
     @Then("I check if addresses match by {string}")
