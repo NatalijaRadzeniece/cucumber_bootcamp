@@ -6,10 +6,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
-import pageObject.HomePage;
-import pageObject.SignHomePage;
-import pageObject.SignInPage;
-import pageObject.SignUpPage;
+import pageObject.*;
 import stepDefinitions.hooks.Hooks;
 
 public class EOD_TaskSteps {
@@ -79,11 +76,14 @@ public class EOD_TaskSteps {
 
     @And("I click Addreses")
     public void i_click_Addreses() {
-
+        SignHomePage SignHomePage = new SignHomePage(driver);
+        SignHomePage.addresClick();
     }
 
     @And("I click New Address")
     public void i_click_New_Address() {
+        AddresesPage AddresesPage = new AddresesPage(driver);
+        AddresesPage.NewAddress();
 
     }
 
